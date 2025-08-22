@@ -1,4 +1,4 @@
-# Evita confirmações interativas
+# Evita confirmaÃ§Ãµes interativas
 $ErrorActionPreference = "Stop"
 
 # Lista de apps a instalar via winget
