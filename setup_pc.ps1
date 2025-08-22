@@ -6,7 +6,7 @@ if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
 
 # ===== Ativar Administrator =====
 Enable-LocalUser -Name "Administrator"
-$senha = ConvertTo-SecureString "Tujame4R@f" -AsPlainText -Force
+$senha = Read-Host "Coloca a Password para a conta Administrator" -AsSecureString
 Set-LocalUser -Name "Administrator" -Password $senha
 
 # ===== Wallpapers =====
