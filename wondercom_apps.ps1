@@ -14,7 +14,7 @@ $apps = @(
 
 foreach ($app in $apps) {
 
-    if (winget list --id $app --exact | Select-String $app) {
+    if (winget list --id $app --exact | Select-String -SimpleMatch $app) {
 
         Write-Host "[UPDATE] $app" -ForegroundColor Cyan
 
@@ -40,7 +40,7 @@ foreach ($app in $apps) {
 
 # ===== Instalação do Office =====
 
-$OfficeSetup = ".\OfficeSetup.exe"
+$OfficeSetup = "$PSScriptRoot\OfficeSetup.exe"
 if (Test-Path $OfficeSetup) { 
 Write-Host "[INSTALL] Microsoft Office" -ForegroundColor Yellow
 Start-Process `
