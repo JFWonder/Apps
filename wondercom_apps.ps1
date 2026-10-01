@@ -3,7 +3,7 @@
 # ===== Instalação de apps via Winget =====
 $apps = @(
     "Google.Chrome",
-    "Notepad++",
+    "Notepad++.Notepad++",
     "PuTTY.PuTTY",
     "Adobe.Acrobat.Reader.64-bit",
     "Citrix.Workspace",
@@ -40,7 +40,7 @@ foreach ($app in $apps) {
 
 # ===== Instalação do Office =====
 
-$OfficeSetup = Join-Path $PSScriptRoot "OfficeSetup.exe"
+$OfficeSetup = ".\OfficeSetup.exe"
 if (Test-Path $OfficeSetup) { 
 Write-Host "[INSTALL] Microsoft Office" -ForegroundColor Yellow
 Start-Process `
