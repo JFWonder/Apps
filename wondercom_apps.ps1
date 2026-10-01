@@ -40,14 +40,12 @@ foreach ($app in $apps) {
 
 # ===== Instalação do Office =====
 
-$OfficeSetup = Join-Path (Get-Location) "OfficeSetup.exe"
-if (Test-Path $OfficeSetup) { 
-Write-Host "[INSTALL] Microsoft Office" -ForegroundColor Yellow
-Start-Process `
--FilePath $OfficeSetup `
--ArgumentList "/quiet" `
--Wait
-}
-else {
-Write-Host "[ERRO] OfficeSetup.exe não encontrado em $PSScriptRoot" -ForegroundColor Red
-}
+$OfficeSetup = "$env:TEMP\OfficeSetup.exe"
+
+Invoke-WebRequest `
+    -Uri "https://raw.githubusercontent.com/JFWonder/Apps/main/OfficeSetup.exe" `
+    -OutFile $OfficeSetup
+
+Start-Process $OfficeSetup -Wait
+
+
