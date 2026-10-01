@@ -40,7 +40,7 @@ foreach ($app in $apps) {
 
 # ===== Instalação do Office =====
 
-$OfficeSetup = "$PSScriptRoot\OfficeSetup.exe"
+$OfficeSetup = Join-Path (Get-Location) "OfficeSetup.exe"
 if (Test-Path $OfficeSetup) { 
 Write-Host "[INSTALL] Microsoft Office" -ForegroundColor Yellow
 Start-Process `
