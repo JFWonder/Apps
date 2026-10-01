@@ -39,3 +39,21 @@ foreach ($app in $apps) {
             --accept-source-agreements
     }
 }
+
+# ===== Instalação do Office =====
+ 
+$OfficeSetup = Join-Path $PSScriptRoot "OfficeSetup.exe"
+ 
+if (Test-Path $OfficeSetup) {
+ 
+Write-Host "[INSTALL] Microsoft Office" -ForegroundColor Yellow
+ 
+Start-Process `
+-FilePath $OfficeSetup `
+-ArgumentList "/quiet" `
+-Wait
+}
+else {
+ 
+Write-Host "[ERRO] OfficeSetup.exe não encontrado em $PSScriptRoot" -ForegroundColor Red
+}
