@@ -3,13 +3,14 @@
 # ===== Instalação de apps via Winget =====
 $apps = @(
     "Google.Chrome",
-    "Notepad++.Notepad++",
+    "Notepad++",
     "PuTTY.PuTTY",
     "Adobe.Acrobat.Reader.64-bit",
     "Dell.CommandUpdate",
     "Citrix.Workspace",
     "Mozilla.Firefox",
     "7zip.7zip",
+    "PDF24.PDF24Creator",
     "Microsoft.Office"
 )
 
