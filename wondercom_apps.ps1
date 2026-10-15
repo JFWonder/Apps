@@ -40,12 +40,12 @@ foreach ($app in $apps) {
 
 # ===== Instalação do Office =====
 
-$OfficeSetup = "$env:TEMP\OfficeSetup.exe"
+#$OfficeSetup = "$env:TEMP\OfficeSetup.exe"
 
-Invoke-WebRequest `
-    -Uri "https://raw.githubusercontent.com/JFWonder/Apps/main/OfficeSetup.exe" `
-    -OutFile $OfficeSetup
+#Invoke-WebRequest `
+  #  -Uri "https://raw.githubusercontent.com/JFWonder/Apps/main/OfficeSetup.exe" `
+  #  -OutFile $OfficeSetup
 
-Start-Process $OfficeSetup -Wait
+#Start-Process $OfficeSetup -Wait
 
 
