@@ -39,6 +39,24 @@ foreach ($app in $apps) {
     }
 }
 
+# ----- perguntar se quer instalar o onlyoffice -----
+
+$OnlyOffice = Read-Host "Deseja instalar o OnlyOffice?"
+$OnlyOffice = $OnlyOffice -eq "y"
+
+if ($OnlyOffice) {
+
+    write-Host "[INSTALL] OnlyOffice" -ForegroundColor Yellow
+    winget install `
+        --id "OnlyOffice.OnlyOffice.DesktopEditors" `
+        --exact `
+        --silent `
+        --accept-package-agreements `
+        --accept-source-agreements
+}
+
+
+
 
 # ===== Instalação do Office =====
 
