@@ -9,6 +9,7 @@ $apps = @(
     "Citrix.Workspace",
     "Mozilla.Firefox",
     "7zip.7zip",
+    "Google.EarthPro",
     "PDF24.PDF24Creator"
 )
 
