@@ -100,37 +100,7 @@ foreach ($app in $atualizacoes) {
     }
 }
 
-# ===== Idioma do Windows: Português (Portugal) =====
 
-$resposta = Read-Host "Queres alterar o idioma do Windows para Português (Portugal)? (S/N)"
-
-if ($resposta -match '^(S|SIM)$') {
-    try {
-        # Instala o pacote de idioma, se o comando estiver disponível.
-        if (Get-Command Install-Language -ErrorAction SilentlyContinue) {
-            Install-Language -Language pt-PT -ErrorAction Stop
-        }
-        else {
-            throw "Install-Language não está disponível nesta versão do Windows."
-        }
-
-        $listaIdiomas = New-WinUserLanguageList -Language "pt-PT"
-        Set-WinUserLanguageList -LanguageList $listaIdiomas -Force
-        Set-WinUILanguageOverride -Language "pt-PT"
-        Set-Culture -CultureInfo "pt-PT"
-        Set-WinSystemLocale -SystemLocale "pt-PT"
-        Set-WinHomeLocation -GeoId 193
-
-        Write-Host "Idioma configurado para Português (Portugal). Reinicia o PC para aplicar todas as alterações." -ForegroundColor Green
-    }
-    catch {
-        Write-Host "Não foi possível alterar o idioma: $($_.Exception.Message)" -ForegroundColor Red
-        Write-Host "Confirma que estás a executar o PowerShell como administrador e que esta versão do Windows suporta a instalação do idioma." -ForegroundColor Yellow
-    }
-}
-else {
-    Write-Host "Idioma do Windows mantido sem alterações." -ForegroundColor Gray
-}
 
 # ===== Instalação do Office =====
 
